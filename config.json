@@ -1,0 +1,11 @@
+{
+    "host": "golang-leonharvey.c9users.io",
+    "favicon": "/favicon.png",
+    "static": "/assets",
+    "developmentMode": true,
+    "forceSSL": false,
+    "listenPort": 8080,
+    "loggerEnabled": false,
+    "secret": ""
+    "databaseType": "bolt"
+}
