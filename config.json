@@ -1,5 +1,5 @@
 {
-    "host": "golang-neoh.c9users.io",
+    "host": "site.com",
     "favicon": "/favicon.png",
     "static": "/assets",
     "developmentMode": true,
