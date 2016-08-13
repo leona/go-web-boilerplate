@@ -7,12 +7,12 @@ import (
     "fmt"
     "github.com/kataras/iris"
     "github.com/fatih/color"
-    "github.com/leonharvey/go-web-boilerplate/lib/settings"
-    _ "github.com/leonharvey/go-web-boilerplate/lib/limiter"
-    _ "github.com/leonharvey/go-web-boilerplate/lib/middleware"
-    _ "github.com/leonharvey/go-web-boilerplate/controllers"
-    "github.com/leonharvey/go-web-boilerplate/models"
-    "github.com/leonharvey/go-web-boilerplate/lib/database"
+    "github.com/neoh/go-web-boilerplate/lib/settings"
+    _ "github.com/neoh/go-web-boilerplate/lib/limiter"
+    _ "github.com/neoh/go-web-boilerplate/lib/middleware"
+    _ "github.com/neoh/go-web-boilerplate/controllers"
+    "github.com/neoh/go-web-boilerplate/models"
+    "github.com/neoh/go-web-boilerplate/lib/database"
 )
 
 
@@ -21,6 +21,8 @@ func main() {
     
     switch settings.Config.DatabaseType {
         case "bolt":
+            fmt.Println("Setting up Bolt database")
+            
             database.Use(database.BoltDB("bolt.db"))
             database.RunMigrations()
         default:

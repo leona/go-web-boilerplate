@@ -3,8 +3,8 @@ package middleware
 import (
     "fmt"
     "github.com/kataras/iris"
-    "github.com/leonharvey/go-web-boilerplate/lib/settings"
-    //"github.com/leonharvey/go-web-boilerplate/lib/logger"
+    "github.com/neoh/go-web-boilerplate/lib/settings"
+    //"github.com/neoh/go-web-boilerplate/lib/logger"
 )
 
 func init() {

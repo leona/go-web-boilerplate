@@ -5,6 +5,12 @@ build:
 	@go generate ./bin
 	@go build -o ./bin/run ./bin/server.go
 	
+build-small:
+	@go generate ./bin
+	@go build -ldflags="-s -w" -o ./bin/run ./bin/server.go
+	@upx --brute ./bin/run
+	#sudo apt-get install upx-ucl
+	
 run-dev:
 	@go generate ./bin
 	@go run ./bin/server.go
@@ -13,7 +19,6 @@ run:
 	@./bin/run
 	
 setup:
-	@mkdir $HOME/workspace
 	@export GOPATH=$HOME/workspace
 	@export PATH=$PATH:$GOPATH/bin
 	

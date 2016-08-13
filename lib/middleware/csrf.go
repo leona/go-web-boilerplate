@@ -4,10 +4,10 @@ import (
     "github.com/kataras/iris"
     "github.com/valyala/fasthttp"
     "bytes"
-    "time"
-    "github.com/leonharvey/go-web-boilerplate/lib/logger"
-    "github.com/leonharvey/go-web-boilerplate/lib/settings"
-    "github.com/leonharvey/go-web-boilerplate/lib/utilities"
+    //"time"
+    "github.com/neoh/go-web-boilerplate/lib/logger"
+    "github.com/neoh/go-web-boilerplate/lib/settings"
+    "github.com/neoh/go-web-boilerplate/lib/utilities"
     "fmt"
 )
 
@@ -15,22 +15,26 @@ func init() {
     fmt.Println("Loading CSRF middleware")
     
     triggerMethod := []byte("POST")
+    
+    cookie := new(fasthttp.Cookie)
+    cookie.SetKey(settings.Keys.Csrf)
+    cookie.SetPath("/")
+    cookie.SetSecure(settings.Config.ForceSSL)
+    cookie.SetHTTPOnly(true)
+    //cookie.SetExpire(time.Now().Add(time.Duration(120) * time.Minute))
+    //cookie.SetDomain(settings.Config.Host)
 
     iris.UseFunc(func(c *iris.Context) {
         if bytes.Compare(c.Method(), triggerMethod) != 0 {
             //Is GET method
-            
             if len(c.GetCookie("csrf_token")) < 64 {
-            	cookie := new(fasthttp.Cookie)
-            	cookie.SetKey(settings.Keys.Csrf)
+                var clientCookie *fasthttp.Cookie
+                clientCookie = cookie
+                
+            	clientCookie.SetKey(settings.Keys.Csrf)
             	cookie.SetValue(utilities.RandomString(64))
-            	cookie.SetPath("/")
-            	cookie.SetDomain(settings.Config.Host)
-            	cookie.SetExpire(time.Now().Add(time.Duration(120) * time.Minute))
-            	cookie.SetSecure(settings.Config.ForceSSL)
-            	cookie.SetHTTPOnly(true)
 
-            	c.SetCookie(cookie)
+            	c.SetCookie(clientCookie)
             }
             
             c.Next()

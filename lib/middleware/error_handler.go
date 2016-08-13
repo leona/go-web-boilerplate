@@ -2,8 +2,8 @@ package middleware
 
 import (
     "github.com/kataras/iris"
-    "github.com/leonharvey/go-web-boilerplate/views"
-    "github.com/leonharvey/go-web-boilerplate/lib/settings"
+    "github.com/neoh/go-web-boilerplate/views"
+    "github.com/neoh/go-web-boilerplate/lib/settings"
 )
 
 func init() {

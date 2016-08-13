@@ -3,7 +3,7 @@ package limiter
 import (
     "github.com/jaredfolkins/badactor"
     "time"
-    "github.com/leonharvey/go-web-boilerplate/lib/logger"
+    "github.com/neoh/go-web-boilerplate/lib/logger"
 )
 
 var St *badactor.Studio

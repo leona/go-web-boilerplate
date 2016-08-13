@@ -5,7 +5,7 @@ import (
     "os"
     "log"
     "fmt"
-    "github.com/leonharvey/go-web-boilerplate/lib/utilities"
+    "github.com/neoh/go-web-boilerplate/lib/utilities"
 )
 
 var Config struct {

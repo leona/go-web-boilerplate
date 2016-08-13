@@ -6,8 +6,8 @@ import (
     "time"
     "strings"
     "strconv"
-    "github.com/leonharvey/go-web-boilerplate/lib/settings"
-    "github.com/leonharvey/go-web-boilerplate/lib/utilities"
+    "github.com/neoh/go-web-boilerplate/lib/settings"
+    "github.com/neoh/go-web-boilerplate/lib/utilities"
 )
 
 type logger struct {

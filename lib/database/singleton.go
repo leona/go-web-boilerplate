@@ -2,7 +2,7 @@ package database
 
 import (
     "github.com/boltdb/bolt"
-    "github.com/leonharvey/go-web-boilerplate/models/migrations"
+    "github.com/neoh/go-web-boilerplate/models/migrations"
 )
 
 var Instance *bolt.DB

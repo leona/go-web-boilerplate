@@ -2,8 +2,8 @@ package limiter
 
 import (
     "github.com/kataras/iris"
-    "github.com/leonharvey/go-web-boilerplate/lib/logger"
-    "github.com/leonharvey/go-web-boilerplate/lib/settings"
+    "github.com/neoh/go-web-boilerplate/lib/logger"
+    "github.com/neoh/go-web-boilerplate/lib/settings"
     "fmt"
     "bytes"
 )

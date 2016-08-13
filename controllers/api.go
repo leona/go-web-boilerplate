@@ -3,7 +3,7 @@ package controllers
 import "github.com/kataras/iris"
 
 func init() {
-	iris.API("/users", UserAPI{})
+	//iris.API("/", UserAPI{})
 }
 
 type UserAPI struct {
